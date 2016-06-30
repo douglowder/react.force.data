@@ -23,7 +23,7 @@
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
  */
- 
+
 import cache from './cache';
 
 import storage from './storage';
@@ -31,7 +31,6 @@ import storage from './storage';
 module.exports = (opts) => {
   return new Promise(
     (resolve, reject) => {
-
       if(opts.noCache){
         resolve(opts);
         return;
@@ -49,7 +48,10 @@ module.exports = (opts) => {
         if(item){
           opts.cachedSobj = item;
           resolve(opts);
+        } else {
+          resolve(opts);
         }
+        return;
       });
 */
     }
